@@ -9,13 +9,13 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UtiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-set guifont=Monospace\ 14 
+set guifont=Monospace\ 14
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set textwidth=0
-autocmd BufReadPre *.py setlocal textwidth=79
+" autocmd BufReadPre *.py setlocal textwidth=79
 set expandtab
 set autoindent
 set fileformat=unix
@@ -40,6 +40,9 @@ set clipboard=unnamed
 "show the matching part of the pair for [] {} ()
 set showmatch
 
+"allow airline in single window
+set laststatus=2
+
 "python syntax highlighting
 let python_highlight_all = 1
 
@@ -47,13 +50,10 @@ syntax on
 set t_Co=256
 
 " Unified color scheme
-colo PaperColor
-
-" Light color scheme
-" colo seoul256-light
-
-" Switch
 set background=light
+let g:airline_theme='papercolor'
+colorscheme snow
 
+let g:pathogen_disabled = ["ale"]
 " load plugins
 execute pathogen#infect()
