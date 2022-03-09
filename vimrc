@@ -46,14 +46,25 @@ set laststatus=2
 "python syntax highlighting
 let python_highlight_all = 1
 
+" color schemes
 syntax on
 set t_Co=256
-
-" Unified color scheme
+"let g:airline_theme='papercolor'
+"colorscheme onehalfdark
+colorscheme one
 set background=light
-let g:airline_theme='papercolor'
-colorscheme snow
+let g:airline_theme='one'
+"colorscheme onehalflight
+"set background=dark
+"colorscheme solarized
 
-let g:pathogen_disabled = ["ale"]
+" ale
+" only run linter on file save and opening
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+
+
 " load plugins
 execute pathogen#infect()
