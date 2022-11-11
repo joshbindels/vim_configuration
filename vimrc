@@ -19,6 +19,7 @@ set textwidth=0
 set expandtab
 set autoindent
 set fileformat=unix
+set cursorline
 
 
 " nerdtree config
@@ -51,7 +52,8 @@ syntax on
 set t_Co=256
 "let g:airline_theme='papercolor'
 "colorscheme onehalfdark
-colorscheme one
+"colorscheme solarized
+colorscheme seoul256
 set background=light
 let g:airline_theme='one'
 "colorscheme onehalflight
@@ -68,3 +70,15 @@ let g:ale_lint_on_save = 1
 
 " load plugins
 execute pathogen#infect()
+
+fu! Toggle()
+    if &background ==# "dark"
+        colorscheme seoul256
+        set background=light
+    else
+        colorscheme gruvbox
+        set background=dark
+    endif
+endfunction
+
+map <Leader>+ :call Toggle()<CR>
