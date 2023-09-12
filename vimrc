@@ -55,7 +55,7 @@ set t_Co=256
 colorscheme solarized8
 "colorscheme seoul256
 set background=light
-let g:airline_theme='one'
+let g:airline_theme='onedark'
 "colorscheme onehalflight
 "set background=dark
 "colorscheme solarized
