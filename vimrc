@@ -52,8 +52,8 @@ syntax on
 set t_Co=256
 "let g:airline_theme='papercolor'
 "colorscheme onehalfdark
-"colorscheme solarized
-colorscheme seoul256
+colorscheme solarized8
+"colorscheme seoul256
 set background=light
 let g:airline_theme='one'
 "colorscheme onehalflight
@@ -71,7 +71,7 @@ let g:ale_lint_on_save = 1
 " load plugins
 execute pathogen#infect()
 
-fu! Toggle()
+fu! CycleThemes()
     if &background ==# "dark"
         colorscheme seoul256
         set background=light
@@ -81,4 +81,7 @@ fu! Toggle()
     endif
 endfunction
 
-map <Leader>+ :call Toggle()<CR>
+map <Leader>+ :call CycleThemes()<CR>
+map <Leader>= :colorscheme solarized8<CR> :set background=light<CR>
+
+" set rtp+=/opt/homebrew/opt/fzf
